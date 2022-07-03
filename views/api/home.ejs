@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+
+        <title>Template</title>
+</head>
+<body>
+
+    <% users.forEach(user =>{ %>
+
+
+<div class="mx-auto" style="width: 850px;" >
+    
+<div  class="border border-success"   style="width: 60rem;">
+        <section class="section about-section gray-bg" id="about">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="about-text go-to">
+        
+                                    <div class="media">
+                                        <label >College - </label>
+                                        <p class="fw-bold"> <%=  user.college_name %></p>
+                                    </div>
+                                    <div class="media">
+                                        <label >E-mail - </label>
+                                        <a href = "mailto: abc@example.com"><%= user.email %></a>
+                                    </div>
+                            
+                                     <div class="media">
+                                        <label>Phone -</label>
+                                        <p><%=  user.phone_number %></p>
+                                     </div>
+
+                                        <div class="media">
+                                        <label>About Me -</label>
+                                        <p> <%= user.about_me %></p>
+                                        </div>
+                                    
+                                
+                            <h6 class="theme-color lead" > <mark>Interest</mark> <%= user.interest %> </h6>
+
+                        
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-avatar">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="counter">
+                    <div class="row">
+                        <div class="col-6 col-lg-3">
+                            <div class="count-data text-center">
+                                <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                                <p class="m-0px font-w-600">Happy Clients</p>
+
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="count-data text-center">
+                                <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                                <p class="m-0px font-w-600">Project Completed</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="count-data text-center">
+                                <h6 class="count h2" data-to="850" data-speed="850">linkedin </h6>
+                                 <a  href="<%= user.linkedin %>">linkedin</a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="count-data text-center">
+                                <h6 class="count h2" data-to="190" data-speed="190">Github</h6>
+                                <a href="<%= user.github %>">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+</div>
+
+   <% }) %>
+
+</body>
+</html>
