@@ -20,9 +20,32 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  encry_password: {
+  phone_number: {
+    type: String,
+    trim: true,
+    required: true
+  },
+  college_name: {
+    type: String,
+    trim: true,
+    required: true
+  },
+  interest: {
+    type: String,
+    trim: true,
+    required: true
+  },encry_password: {
     type: String,
     required: true
+  },about_me: {
+    type: String,
+    trie: true,
+  },linkedin: {
+    type: String,
+    trie: true
+  }, github: {
+    type: String,
+    trie: true,
   },
   salt: String,
 }, {timestamps: true})

@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
 const express = require("express")
 const app = express()
+app.set('view engine','ejs')
+app.use(express.urlencoded({ extended: false}))
+app.engine('html', require('ejs').renderFile);
+const methodOverride=require('method-override')
+
 
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
@@ -18,18 +23,13 @@ mongoose.connect(process.env.DATABASE, {
   console.log("UNABLE to connect to DB")
 })
 
-// Use parsing middleware
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(cors())
 
-// Import the routes
 const userRoutes = require("./routes/user")
 
-// Using routes
 app.use('/api', userRoutes) 
-
-
 const port = process.env.PORT || 8000
 
 // Starting a server
