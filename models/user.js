@@ -30,11 +30,12 @@ const userSchema = new mongoose.Schema({
     trim: true,
     required: true
   },
-  interest: {
+  skill: [{
     type: String,
     trim: true,
-    required: true
-  },encry_password: {
+
+  }],
+  encry_password: {
     type: String,
     required: true
   },about_me: {
@@ -58,6 +59,15 @@ userSchema.virtual("password")
   })
   .get(function() {
     return this._password
+  })
+
+  
+userSchema.virtual("interest")
+  .set(function(interest) {
+    this.skill=interest.split(',');
+    
+    console.log(this.skill)
+  
   })
 
 userSchema.methods = {

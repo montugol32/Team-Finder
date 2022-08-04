@@ -6,7 +6,6 @@ const Users=require('./../models/user')
 
 router.get('/home',async(req,res)=>{
   const users=await Users.find();
-  console.log(users);
   res.render('api/home',{users: users});
 })
 
